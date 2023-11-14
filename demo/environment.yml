@@ -108,7 +108,6 @@ dependencies:
   - python=3.7.12=hf930737_100_cpython
   - python-dateutil=2.8.2=pyhd8ed1ab_0
   - python_abi=3.7=2_cp37m
-  - pytorch=1.10.0=cuda112py37h3bec1eb_0
   - pytorch-gpu=1.10.0=cuda112py37h0bbbad9_0
   - pytz=2021.3=pyhd8ed1ab_0
   - pyzmq=22.3.0=py37h336d617_1
@@ -142,56 +141,61 @@ dependencies:
   - zlib=1.2.11=h36c2ea0_1013
   - zstd=1.5.0=ha95c52a_0
   - pip:
-    - baryrat==1.4.0
-    - bleach==4.1.0
-    - bokeh==2.3.3
-    - cloudpickle==2.0.0
-    - colorcet==2.0.6
-    - cython==0.29.23
-    - dask==2021.9.0
-    - datashader==0.13.0
-    - datashape==0.5.2
-    - distributed==2021.9.0
-    - dominate==2.6.0
-    - fsspec==2021.8.1
-    - heapdict==1.0.1
-    - holoviews==1.14.5
-    - imageio==2.9.0
-    - jsonpatch==1.32
-    - jsonpointer==2.1
-    - llvmlite==0.37.0
-    - locket==0.2.1
-    - msgpack==1.0.2
-    - multipledispatch==0.6.0
-    - networkx==2.6.3
-    - numba==0.54.0
-    - packaging==21.0
-    - panel==0.12.1
-    - param==1.11.1
-    - partd==1.2.0
-    - patsy==0.5.1
-    - psutil==5.8.0
-    - pyct==0.4.8
-    - pynndescent==0.5.4
-    - pyviz-comms==2.1.0
-    - pywavelets==1.1.1
-    - pyyaml==5.4.1
-    - scikit-image==0.18.3
-    - sortedcontainers==2.4.0
-    - statsmodels==0.12.2
-    - tblib==1.7.0
-    - thop==0.0.31-2005241907
-    - tifffile==2021.8.30
-    - toolz==0.11.1
-    - torch==1.8.1
-    - torch-tb-profiler==0.2.1
-    - torchfile==0.1.0
-    - torchvision==0.9.1
-    - umap==0.1.1
-    - umap-learn==0.5.1
-    - visdom==0.1.8.9
-    - webencodings==0.5.1
-    - websocket-client==1.0.1
-    - xarray==0.19.0
-    - zict==2.0.0
-prefix: /home/sr365/anaconda3/envs/benicml
+      - baryrat==1.4.0
+      - bleach==4.1.0
+      - bokeh==2.3.3
+      - charset-normalizer==3.3.2
+      - click==8.1.7
+      - cloudpickle==2.0.0
+      - colorcet==2.0.6
+      - cython==0.29.23
+      - dask==2021.9.0
+      - datashader==0.13.0
+      - datashape==0.5.2
+      - distributed==2021.9.0
+      - dominate==2.6.0
+      - fsspec==2021.8.1
+      - heapdict==1.0.1
+      - holoviews==1.14.5
+      - idna==3.4
+      - imageio==2.9.0
+      - jsonpatch==1.32
+      - jsonpointer==2.1
+      - llvmlite==0.37.0
+      - locket==0.2.1
+      - msgpack==1.0.2
+      - multipledispatch==0.6.0
+      - networkx==2.6.3
+      - numba==0.54.0
+      - packaging==21.0
+      - panel==0.12.1
+      - param==1.11.1
+      - partd==1.2.0
+      - patsy==0.5.1
+      - psutil==5.8.0
+      - pyct==0.4.8
+      - pynndescent==0.5.4
+      - pyviz-comms==2.1.0
+      - pywavelets==1.1.1
+      - pyyaml==5.4.1
+      - requests==2.31.0
+      - scikit-image==0.18.3
+      - sortedcontainers==2.4.0
+      - statsmodels==0.12.2
+      - tblib==1.7.0
+      - thop==0.0.31-2005241907
+      - tifffile==2021.8.30
+      - toolz==0.11.1
+      - torch==1.8.1
+      - torch-tb-profiler==0.2.1
+      - torchfile==0.1.0
+      - torchvision==0.9.1
+      - umap==0.1.1
+      - umap-learn==0.5.1
+      - urllib3==2.0.7
+      - visdom==0.1.8.9
+      - webencodings==0.5.1
+      - websocket-client==1.0.1
+      - xarray==0.19.0
+      - zict==2.0.0
+prefix: /home/orangeduice_work/anaconda3/envs/benicml
