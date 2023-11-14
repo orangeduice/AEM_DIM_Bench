@@ -14,7 +14,8 @@ from numpy.testing import assert_equal,assert_almost_equal,assert_raises
 import pickle
 
 #FOLDER_PATH = 'C:\\Users\\Lab User\\Desktop\\Ashwin\\MM_Bench\\Data\\Chen'
-FOLDER_PATH = '/home/sr365/MM_Bench/Data/Chen'
+#FOLDER_PATH = '/home/sr365/MM_Bench/Data/Chen'
+FOLDER_PATH = '/home/orangeduice_work/AEM_DIM_Bench/Data/Chen/'
 #from numba import jit
 
 def cheb_fitcurve( x,y,order ):

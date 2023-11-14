@@ -4,7 +4,7 @@ This file serves as a prediction interface for the network
 # Built in
 import os
 import sys
-sys.path.append('../utils/')
+sys.path.append('/home/orangeduice_work/AEM_DIM_Bench/')
 import time
 # Torch
 
