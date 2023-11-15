@@ -42,7 +42,7 @@ def generate_step_functions():
         # print('len of y_tot = ', len(y_tot))
         y_tot = np.array(y_tot)
         print('shape of np version = ', np.shape(y_tot))
-        save_dir = '/home/sr365/MM_Bench/Data/step_func/'
+        save_dir = '/home/orangeduice_home/AEM_DIM_Bench/Data/step_func/'
         if not os.path.isdir(save_dir):
             os.makedirs(save_dir)
         np.savetxt(os.path.join(save_dir ,dataset+'step_function.txt'), y_tot)

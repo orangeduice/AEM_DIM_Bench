@@ -61,7 +61,7 @@ X_RANGE = [i for i in range(2, 16 )]
 Y_RANGE = [i for i in range(16 , 2017 )]                         # Artificial Meta-material dataset
 FORCE_RUN = True
 MODEL_NAME = None 
-DATA_DIR = '/home/sr365/MM_Bench/Data/'                                               # All simulated simple dataset
+DATA_DIR = '/home/orangeduice_home/AEM_DIM_Bench/Data/'                                              # All simulated simple dataset
 GEOBOUNDARY =[0.3, 0.6, 1, 1.5, 0.1, 0.2, -0.786, 0.786]
 NORMALIZE_INPUT = True
 

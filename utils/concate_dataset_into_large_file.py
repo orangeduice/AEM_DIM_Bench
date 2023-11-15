@@ -4,7 +4,7 @@ import os
 import numpy as np
 import pandas as pd
 
-mother_folder = '/home/sr365/MM_Bench/Data/Omar_bowtie'
+mother_folder = '/home/orangeduice_home/AEM_DIM_Bench/Data/Omar_bowtie'
 geometry, spectra = None, None
 
 for file_prefix in ['inputs_Srico_MMPA_bowtie_x1000_','Abs_Srico_MMPA_bowtie_x1000_']:
