@@ -5,7 +5,8 @@ This file serves as a training interface for training the network
 import glob
 import os
 import shutil
-
+import sys
+sys.path.append('/home/yw/Documents/oscar_work/AEM_DIM_Bench/')
 # Torch
 import torch
 # Own
@@ -42,12 +43,13 @@ def retrain_different_dataset(index):
     This function is to evaluate all different datasets in the model with one function call
     """
     from utils.helper_functions import load_flags
-    data_set_list = ["Peurifoy"]
-    # data_set_list = ["Chen"]
-    # data_set_list = ["Yang"]
-    #data_set_list = ["Peurifoy","Chen","Yang_sim"]
+    #data_set_list = ["Peurifoy"]
+    #data_set_list = ["Chen"]
+    #data_set_list = ["Yang"]
+    data_set_list = ["Yang","Chen","Peurifoy"]
     for eval_model in data_set_list:
         flags = load_flags(os.path.join("models", eval_model+"_best_model"))
+        flags.data_dir = '~/Documents/oscar_work/AEM_DIM_Bench/Data/'
         flags.model_name = "retrain" + str(index) + eval_model
         flags.train_step = 500
         flags.test_ratio = 0.2
@@ -59,12 +61,12 @@ def hyperswipe():
     """
     reg_scale_list = [1e-4]
     #reg_scale_list = [1e-3,  1e-4,  5e-3]
-    kl_coeff_list = [0.1]# 
-    #kl_coeff_list = [5e-2, 0.1, 1, 5] 
+    #kl_coeff_list = [0.1]# 
+    kl_coeff_list = [0.01, 0.1] 
     #kl_coeff_list = [5e-2, 0.1, 1, 5] 
     #kl_coeff_list = [5e-2, 0.1, 1, 5] 
     layer_size_list = [1000]
-    dim_z_list = [10, 20]
+    dim_z_list = [10, 20, 30]
     for kl_coeff in kl_coeff_list:
         for layer_num in range(8, 15, 2):
             for layer_size in layer_size_list:
@@ -91,14 +93,14 @@ if __name__ == '__main__':
     # torch.manual_seed(1)
     # torch.cuda.manual_seed(1)
     # Read the parameters to be set
-    flags = flag_reader.read_flag()
+    #flags = flag_reader.read_flag()
 
-    # hyperswipe()
+    #hyperswipe()
     # Call the train from flag function
     #training_from_flag(flags)
 
     # Do the retraining for all the data set to get the training 
-    for i in range(5, 6):
+    for i in range(0, 10):
        retrain_different_dataset(i)
 
 

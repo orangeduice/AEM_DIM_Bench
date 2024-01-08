@@ -24,7 +24,7 @@ CONV_STRIDE_B = [1, 1, 2]
 
 """
 # Model Architectural Params for gaussian mixture dataset
-LINEAR_F = [8, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 201]
+LINEAR_F = [14, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 2000]
 #LINEAR_F = [3, 500, 500, 500, 500, 500,  256]
 CONV_OUT_CHANNEL_F = []
 CONV_KERNEL_SIZE_F = []
@@ -34,7 +34,9 @@ CONV_STRIDE_F = []
 #CONV_STRIDE_F = [2,1,1]
 
 #LINEAR_B = [2, 500, 500, 500, 500, 500, 3]
-LINEAR_B = [201, 500, 500, 500, 500, 500, 3]
+#LINEAR_B = [256, 500, 500, 500, 500, 500, 5]
+LINEAR_B = [2000, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 14]
+
 CONV_OUT_CHANNEL_B = []
 CONV_KERNEL_SIZE_B = []
 CONV_STRIDE_B = []
@@ -61,7 +63,7 @@ X_RANGE = [i for i in range(2, 16 )]
 Y_RANGE = [i for i in range(16 , 2017 )]                         # Artificial Meta-material dataset
 FORCE_RUN = True
 MODEL_NAME = None 
-DATA_DIR = '/home/orangeduice_home/AEM_DIM_Bench/Data/'                                              # All simulated simple dataset
+DATA_DIR = '~/Documents/oscar_work/AEM_DIM_Bench/Data/'                                              # All simulated simple dataset
 GEOBOUNDARY =[0.3, 0.6, 1, 1.5, 0.1, 0.2, -0.786, 0.786]
 NORMALIZE_INPUT = True
 

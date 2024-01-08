@@ -161,6 +161,7 @@ def get_data_into_loaders(data_x, data_y, batch_size, DataSetClass, rand_seed=1,
 
     print('total number of training sample is {}, the dimension of the feature is {}'.format(len(x_train),
                                                                                              len(x_train[0])))
+    print('Spetra is dim ',len(y_train[0]))
     print('total number of test sample is {}'.format(len(y_test)))
 
     # Construct the dataset using a outside class

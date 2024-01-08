@@ -7,7 +7,7 @@ import os
 import shutil
 import random
 import sys
-sys.path.append('../utils/')
+sys.path.append('/home/yw/Documents/oscar_work/AEM_DIM_Bench/')
 
 # Torch
 
@@ -46,10 +46,11 @@ def retrain_different_dataset(index):
     from utils.helper_functions import load_flags
     #data_set_list = ["Peurifoy"]
     #data_set_list = ["Chen"]
-    data_set_list = ["Yang"]
-    #data_set_list = ["Peurifoy","Chen","Yang_sim"]
+    #data_set_list = ["Yang"]
+    data_set_list = ["Peurifoy","Chen","Yang"]
     for eval_model in data_set_list:
         flags = load_flags(os.path.join("models", eval_model+"_best_model"))
+        flags.data_dir = '~/Documents/oscar_work/AEM_DIM_Bench/Data/'
         flags.model_name = "retrain" + str(index) + eval_model
         flags.train_step = 500
         flags.test_ratio = 0.2
@@ -100,6 +101,6 @@ if __name__ == '__main__':
     
     # training_from_flag(flags)
     # Do the retraining for all the data set to get the training 
-    for i in range(10):
+    for i in range(0,10):
        retrain_different_dataset(i)
 

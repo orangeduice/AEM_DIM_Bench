@@ -4,7 +4,7 @@ This file serves as a evaluation interface for the network
 # Built in
 import os
 import sys
-sys.path.append('../utils/')
+sys.path.append('/home/yw/Documents/oscar_work/AEM_DIM_Bench/')
 # Torch
 
 # Own
@@ -121,6 +121,7 @@ def evaluate_all(models_dir="models"):
     """
     for file in os.listdir(models_dir):
         if os.path.isfile(os.path.join(models_dir, file, 'flags.obj')):
+            
             evaluate_from_model(os.path.join(models_dir, file))
     return None
 
@@ -130,7 +131,8 @@ def evaluate_different_dataset(multi_flag=False, eval_data_all=False, modulized_
     This function is to evaluate all different datasets in the model with one function call
     """
     for model in os.listdir('models/'):
-        if 'new_best' in model and 'Peu' in model:
+        #if 'new_best' in model and 'Peu' in model:
+        if 'new_best' in model:
             evaluate_from_model(model, multi_flag=multi_flag, 
                         eval_data_all=eval_data_all, modulized_flag=modulized_flag)
 

@@ -317,6 +317,9 @@ class Network(object):
                     geometry = geometry.cuda()  # Put data onto GPU
                     spectra = spectra.cuda()    # Put data onto GPU
                 self.optm_b.zero_grad()         # Zero the gradient first
+                #print('############')
+                #print(len(geometry[0]), len(spectra[0]))
+                #print('############')
                 G_out = self.model_b(spectra)  # Get the geometry prediction
                 S_out = self.model_f(G_out)     # Get the spectra prediction
                 loss = self.make_loss(S_out, spectra, G=G_out)  # Get the loss tensor

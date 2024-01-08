@@ -4,7 +4,7 @@ This file serves as a prediction interface for the network
 # Built in
 import os
 import sys
-sys.path.append('/home/orangeduice_work/AEM_DIM_Bench/')
+sys.path.append('/home/yw/Documents/oscar_work/AEM_DIM_Bench/')
 import time
 # Torch
 
@@ -196,14 +196,14 @@ def creat_mm_dataset():
 
 if __name__ == '__main__':
     # To create Meta-material dataset, use this line 
-    #start = time.time()
-    #creat_mm_dataset()
-    #print('Time is spend on producing MM dataset is {}'.format(time.time()-start))
+    start = time.time()
+    creat_mm_dataset()
+    print('Time is spend on producing MM dataset is {}'.format(time.time()-start))
     
     # multi evaluation 
-    method_list = ['Tandem','MDN','INN','cINN','VAE','GA','NA','NN']
-    for method in method_list:
-       predict_ensemble_for_all('../Data/Yang_sim/state_dicts/', '../mm_bench_multi_eval/' + method + '/Yang_sim/', no_plot=True)  
+    #method_list = ['Tandem','MDN','INN','cINN','VAE','GA','NA','NN']
+    #for method in method_list:
+    #   predict_ensemble_for_all('../Data/Yang_sim/state_dicts/', '../mm_bench_multi_eval/' + method + '/Yang_sim/', no_plot=True)  
     
     #predict_ensemble_for_all('../Data/Yang_sim/state_dicts/', '/home/sr365/MM_Bench/GA/temp-dat/GA1_chrome_gen_300/Yang_sim', no_plot=True)  
     

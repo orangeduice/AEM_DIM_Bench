@@ -15,7 +15,8 @@ import pickle
 
 #FOLDER_PATH = 'C:\\Users\\Lab User\\Desktop\\Ashwin\\MM_Bench\\Data\\Chen'
 #FOLDER_PATH = '/home/sr365/MM_Bench/Data/Chen'
-FOLDER_PATH = '/home/orangeduice_work/AEM_DIM_Bench/Data/Chen/'
+#FOLDER_PATH = '/home/orangeduice_work/AEM_DIM_Bench/Data/Chen/'
+FOLDER_PATH ='/home/yw/Documents/oscar_work/AEM_DIM_Bench/Data/Chen/'
 #from numba import jit
 
 def cheb_fitcurve( x,y,order ):
@@ -592,8 +593,8 @@ if __name__ == '__main__':
     start = time.time()
     isTestLiteMORT = False
     isInverse = True
-    ndata = 50000   # Training and validation set
-    # ndata = 1000    # Test set (half would be taken)
+    #ndata = 50000   # Training and validation set
+    ndata = 1000    # Test set (half would be taken)
 
     generate(ndata)
     print('The generation process of generating {} takes {}s'.format(ndata, time.time() - start))

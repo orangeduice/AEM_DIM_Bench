@@ -12,8 +12,8 @@ def generate_meta_material(data_num):
     return data_x
 
 if __name__ == '__main__':
-    ndata = 10000   # Training and validation set
-    # ndata = 1000    # Test set (half would be taken)
+    #ndata = 10000   # Training and validation set
+    ndata = 1000    # Test set (half would be taken)
     data_x = generate_meta_material(ndata)
     os.makedirs('dataIn')
     np.savetxt('dataIn/data_x.csv', data_x)

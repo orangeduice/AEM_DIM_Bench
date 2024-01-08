@@ -15,15 +15,19 @@ TEST_RATIO = 0.2
 DIM_Z = 5
 DIM_X = 5
 DIM_Y = 256
-# Peurifoy
-DIM_Z = 8
-DIM_X = 8
-DIM_Y = 201
 """
 # Yang
 DIM_Z = 14
 DIM_X = 14
 DIM_Y = 2000
+
+"""
+# Peurifoy
+DIM_Z = 8
+DIM_X = 8
+DIM_Y = 201
+"""
+
 DIM_SPEC = None
 LINEAR_D = [DIM_Y + DIM_Z, 500, 500, 500, 500, 500, 500, 500,    DIM_X]           # Linear units for Decoder
 LINEAR_E = [DIM_Y + DIM_X, 500, 500, 500, 500, 500, 500, 500, 2*DIM_Z]                   # Linear units for Encoder
@@ -54,8 +58,9 @@ X_RANGE = [i for i in range(2, 16 )]
 Y_RANGE = [i for i in range(16 , 2017 )]                         # Artificial Meta-material dataset
 FORCE_RUN = True
 MODEL_NAME = None 
-DATA_DIR = '/home/sr365/MM_Bench/Data/'                                               # All simulated simple dataset
-#DATA_DIR = '../Data/Yang_data/'                                               # All simulated simple dataset
+#DATA_DIR = '/home/sr365/MM_Bench/Data/'                                               # All simulated simple dataset
+#DATA_DIR = '../Data/Yang_data/'     
+DATA_DIR ='~/Documents/oscar_work/AEM_DIM_Bench/Data/'                                           # All simulated simple dataset
 GEOBOUNDARY =[0.3, 0.6, 1, 1.5, 0.1, 0.2, -0.786, 0.786]
 NORMALIZE_INPUT = True
 

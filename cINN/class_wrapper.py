@@ -84,7 +84,7 @@ class Network(object):
 
         return torch.mean(XX + YY - 2. * XY)
 
-    def make_loss(self, z):
+    def make_loss(self, z, jac):
         """
         Create a tensor that represents the loss. This is consistant both at training time \
         and inference time for Backward model
@@ -94,8 +94,11 @@ class Network(object):
         ######################################
         # Pytorch nightly modification 02.18 #
         ######################################
+        
+        #z, log_jac_det = 
+        
         zz = torch.sum(z**2, dim=1)
-        jac = self.model.log_jacobian(run_forward=False)                # get the log jacobian
+        #jac = self.model.log_jacobian(run_forward=False)                # get the log jacobian
         neg_log_likeli = 0.5 * zz - jac
         return torch.mean(neg_log_likeli), torch.mean(jac), torch.mean(zz)                      # The MSE Loss
 
@@ -187,23 +190,30 @@ class Network(object):
                 # Forward step #
                 ################
                 self.optm.zero_grad()                                   # Zero the gradient first
-                z = self.model(x, y)                                    # Get the zpred
-                if isinstance(z, tuple):
-                    z = z[0]
+                z, logJac = self.model(x, y)   
+                #print(z)                                 # Get the zpred
+                #if isinstance(z, tuple):
+                #     z = z[0]
                 #print("type of z is ", type(z))
                 #print("length of tuple is", len(z))
                 #for content in z:
                 #    print("type of content in z: ", type(content))
                 #    print(content)
                 #    print("shape of content is z:", content.size())
-                loss, jac, zz = self.make_loss(z)                                # Make the z loss
+                
+                loss, jac, zz = self.make_loss(z,logJac)                                # Make the z loss
+                
                 loss.backward()
 
                 ######################
                 #  Gradient Clipping #
                 ######################
+               
                 for parameter in self.model.parameters():
-                    parameter.grad.data.clamp_(-self.flags.grad_clamp, self.flags.grad_clamp)
+                    try:
+                    	parameter.grad.data.clamp_(-self.flags.grad_clamp, self.flags.grad_clamp)
+                    except:
+                    	tempy = 1
 
                 #########################
                 # Descent your gradient #
@@ -240,8 +250,8 @@ class Network(object):
                     # Forward step #
                     ################
                     self.optm.zero_grad()  # Zero the gradient first
-                    z = self.model(x, y)  # Get the zpred
-                    loss, jac, zz = self.make_loss(z)  # Make the z loss
+                    z, logJac = self.model(x, y)  # Get the zpred
+                    loss, jac, zz = self.make_loss(z,logJac)  # Make the z loss
 
                     test_loss += loss                                 # Aggregate the loss
 

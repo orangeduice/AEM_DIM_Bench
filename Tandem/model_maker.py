@@ -79,6 +79,7 @@ class Backward(nn.Module):
         """
         # Linear Layer and Batch_norm Layer definitions here
         self.flags = flags
+        print(flags.linear_b)
         self.linears_b = nn.ModuleList([])
         self.bn_linears_b = nn.ModuleList([])
         for ind, fc_num in enumerate(flags.linear_b[0:-1]):               # Excluding the last one as we need intervals

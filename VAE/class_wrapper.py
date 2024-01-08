@@ -4,7 +4,8 @@ The class wrapper for the networks
 # Built-in
 import os
 import time
-
+import sys
+sys.path.append('/home/yw/Documents/oscar_work/AEM_DIM_Bench/')
 # Torch
 import torch
 from torch import nn

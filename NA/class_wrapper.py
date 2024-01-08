@@ -5,7 +5,7 @@ The class wrapper for the networks
 import os
 import time
 import sys
-sys.path.append('../utils/')
+sys.path.append('/home/yw/Documents/oscar_work/AEM_DIM_Bench/')
 
 # Torch
 import torch
