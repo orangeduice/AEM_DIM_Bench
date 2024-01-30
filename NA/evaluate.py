@@ -169,7 +169,7 @@ def evaluate_different_dataset(multi_flag, eval_data_all, save_Simulator_Ypred=F
     """
     ## Evaluate all models with "reatrain" and dataset name in models/
     for model in os.listdir('models/'):
-        if 'best' in model and 'new' in model and 'Peurifoy' in model: 
+        if 'best' in model and 'new' in model: 
             evaluate_from_model(model, multi_flag=multi_flag, 
                         eval_data_all=eval_data_all,save_Simulator_Ypred=save_Simulator_Ypred, MSE_Simulator=MSE_Simulator)
 

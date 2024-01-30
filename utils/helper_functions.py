@@ -11,10 +11,16 @@ import os
 import shutil
 from copy import deepcopy
 import sys
+sys.path.append('/home/yw/Documents/oscar_work/AEM_DIM_Bench/')
 import pickle
 import numpy as np
 from Data.Peurifoy.generate_Peurifoy import simulate as peur_sim
 from Data.Chen.generate_chen import simulate as chen_sim
+
+def getMainPath():
+    return '/home/yw/Documents/oscar_work/AEM_DIM_Bench/'
+
+
 # from ensemble_mm.predict_ensemble import ensemble_predict_master
 # 1
 def get_Xpred(path, name=None):

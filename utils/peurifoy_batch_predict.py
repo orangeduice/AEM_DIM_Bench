@@ -1,6 +1,6 @@
-from utils.helper_functions import simulator
+from helper_functions import simulator
 from multiprocessing import Pool
-from utils.evaluation_helper import plotMSELossDistrib
+from evaluation_helper import plotMSELossDistrib
 import numpy as np
 import os
 import pandas as pd
@@ -56,7 +56,8 @@ if __name__ == '__main__':
     #plot_MSE('../Tandem/data')
     #quit()
     # For the multi_T evaluation
-    folder_list = ['VAE','Tandem','NN','NA','GA','INN','MDN','cINN']
+    #folder_list = ['VAE','Tandem','NN','NA','GA','INN','MDN','cINN']
+    folder_list = ['VAE','Tandem','NN','NA','GA','MDN']
     #folder_list = ['GA']
     # folder_list = ['MDN','INN','VAE','cINN']
     for folders in folder_list:

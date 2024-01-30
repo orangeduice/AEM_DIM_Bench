@@ -5,6 +5,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns; sns.set()
+
+import sys
+sys.path.append('../utils/')
 from utils import helper_functions
 from utils.evaluation_helper import compare_truth_pred
 from sklearn.neighbors import NearestNeighbors
@@ -634,7 +637,7 @@ def MeanAvgnMinMSEvsTry(data_dir):
     plt.plot(x_axis, mse_min_list, label='min')
     plt.legend()
     plt.xlabel('inference number')
-    plt.ylabel('mse error')
+    plt.ylabel('mse error') 
     plt.savefig(os.path.join(data_dir,'mse_plot vs time'))
     return None
 
@@ -856,10 +859,10 @@ def DrawAggregateMeanAvgnMSEPlot(data_dir, data_name, save_name='aggregate_plot'
         if logy:
             ax = plt.gca()
             ax.set_yscale('log')
-        # print(legend_list)
+        print(legend_list)
         # legend_list.append(Line2D([0], [0], color='k', linestyle='dashed', lw=1, label=dash_label))
         # legend_list.append(Line2D([0], [0], color='k', linestyle='solid', lw=1, label=solid_label))
-        #ax.legend(handles=legend_list, loc=1, ncol=2, prop={'size':8})
+        ax.legend(handles=legend_list, loc=1, ncol=2, prop={'size':8})
 
         if time_in_s_table is not None and plot_xlabel:
             plt.xlabel('inference time (s)')
@@ -873,6 +876,8 @@ def DrawAggregateMeanAvgnMSEPlot(data_dir, data_name, save_name='aggregate_plot'
         plt.xscale('log')
         plt.yscale('log')
         plt.xticks([1, 10, 50, 100, 200],['1','10','50','100','200'])
+        print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        plt.gca().set_ylim(top=13.5**(-2))
         ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
         # ax.tick_params(axis='x', which='minor', bottom=False)
         ax.tick_params(axis='y', which='minor', left=True)
@@ -893,6 +898,7 @@ def DrawAggregateMeanAvgnMSEPlot(data_dir, data_name, save_name='aggregate_plot'
         if data_index < 3:
             ax.xaxis.tick_top()
         #plt.xticks([1, 10, 20, 30, 40, 50, 100, 200])
+        
         plt.savefig(os.path.join(data_dir, data_name + save_name + name), transparent=True, dpi=300)
         plt.close('all')
 
@@ -975,9 +981,10 @@ if __name__ == '__main__':
 
     work_dir = '../mm_bench_multi_eval/'
     #work_dir = '/home/sr365/MM_Bench/GA/temp-dat'
-    datasets = ['Peurifoy']
+    #datasets = ['Peurifoy']
     #datasets = ['Yang_sim','Chen','Peurifoy']
-    MeanAvgnMinMSEvsTry_all(work_dir)
+    datasets = ['Chen']
+    #MeanAvgnMinMSEvsTry_all(work_dir)
     for dataset in datasets:
         #DrawAggregateMeanAvgnMSEPlot(work_dir, dataset, resolution=5)
         DrawAggregateMeanAvgnMSEPlot(work_dir, dataset)
