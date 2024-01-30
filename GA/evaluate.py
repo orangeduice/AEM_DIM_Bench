@@ -158,9 +158,9 @@ def test_gen_pop():
                 evaluate_from_model(flags.eval_model, preset_flag=flags, save_Simulator_Ypred=True)
 
 def evaluate_different_dataset(multi_flag=True):
-    # ds = ['Yang']
-    # ds = ['Chen']
-    ds = ['Peurifoy']
+    ds = ['Yang']
+    #ds = ['Chen']
+    #ds = ['Peurifoy']
     for i,dset in enumerate(ds):
         # dxy = dset + '_best_model'
         dxy = 'new_best_' + dset
